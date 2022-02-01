@@ -30,6 +30,7 @@ import { Switch } from 'element-ui'
 import { Tooltip } from 'element-ui'
 import { Pagination } from 'element-ui'
 import { Dialog } from 'element-ui'
+import { MessageBox } from 'element-ui'
 
 
 
@@ -40,6 +41,7 @@ Vue.use(FormItem)
 Vue.use(Input)
     // 挂载到Vue的原型对象上，每个组件可以通过this直接访问 $message
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(Container)
 Vue.use(Header)
 Vue.use(Aside)
