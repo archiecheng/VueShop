@@ -2,7 +2,7 @@
  * @Author: Archie
  * @Date: 2022-01-31 22:29:09
  * @LastEditors: Archie
- * @LastEditTime: 2022-02-01 13:07:16
+ * @LastEditTime: 2022-02-01 17:15:56
  * @FilePath: /vue_shop/src/components/home.vue
 -->
 <template>
@@ -10,7 +10,7 @@
         <!-- 头部区域 -->
         <el-header>
             <div>
-                <img src="../assets/heima.png" alt="">
+                <img src="../assets/heima.png">
                 <span>电商后台管理系统</span>
             </div>
             <el-button type="info" @click="logout">退出</el-button>
