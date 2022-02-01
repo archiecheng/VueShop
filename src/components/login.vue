@@ -2,7 +2,7 @@
  * @Author: Archie
  * @Date: 2022-01-31 20:46:00
  * @LastEditors: Archie
- * @LastEditTime: 2022-01-31 22:27:49
+ * @LastEditTime: 2022-01-31 23:24:14
  * @FilePath: /vue_shop/src/components/login.vue
 -->
 <template>
@@ -83,7 +83,6 @@ export default {
         } else {
           /* 这个冒号语法没看懂 */
           const { data:res } = await this.$http.post('login',this.loginForm);
-          console.log(res);
           if (res.meta.status !== 200) {
             return this.$message.error('登录失败!')
           } else {
