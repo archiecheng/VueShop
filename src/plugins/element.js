@@ -44,6 +44,8 @@ import { Step } from 'element-ui'
 import { Checkbox } from 'element-ui'
 import { CheckboxGroup } from 'element-ui'
 import { Upload } from 'element-ui'
+import { Timeline } from 'element-ui'
+import { TimelineItem } from 'element-ui'
 
 
 
@@ -86,3 +88,5 @@ Vue.use(Step)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
