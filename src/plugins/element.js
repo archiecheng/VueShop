@@ -39,6 +39,11 @@ import { Cascader } from 'element-ui'
 import { Alert } from 'element-ui'
 import { Tabs } from 'element-ui'
 import { TabPane } from 'element-ui'
+import { Steps } from 'element-ui'
+import { Step } from 'element-ui'
+import { Checkbox } from 'element-ui'
+import { CheckboxGroup } from 'element-ui'
+import { Upload } from 'element-ui'
 
 
 
@@ -76,3 +81,8 @@ Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
