@@ -36,6 +36,9 @@ import { Tree } from 'element-ui'
 import { Select } from 'element-ui'
 import { Option } from 'element-ui'
 import { Cascader } from 'element-ui'
+import { Alert } from 'element-ui'
+import { Tabs } from 'element-ui'
+import { TabPane } from 'element-ui'
 
 
 
@@ -70,3 +73,6 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
