@@ -2,7 +2,7 @@
  * @Author: Archie
  * @Date: 2022-02-01 18:37:06
  * @LastEditors: Archie
- * @LastEditTime: 2022-02-01 20:27:27
+ * @LastEditTime: 2022-02-02 10:58:53
  * @FilePath: /vue_shop/src/components/power/Roles.vue
 -->
 <template>
@@ -84,7 +84,7 @@
 <script>
 export default {
   // 组件名称
-  name: 'demo',
+  name: 'Roles',
   // 组件参数 接收来自父组件的数据
   props: {},
   // 局部注册的组件
