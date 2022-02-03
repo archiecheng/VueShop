@@ -35,8 +35,8 @@ export default {
   // 组件状态值
   data () {
     return {
-        // 需要合并的数据
-        options: {
+      // 需要合并的数据
+      options: {
         title: {
           text: '用户来源'
         },
@@ -72,25 +72,25 @@ export default {
   computed: {},
   // 侦听器
   watch: {},
-    //   只要执行到了mounted这个函数，此时页面上的元素已经被渲染完毕了
+  //   只要执行到了mounted这个函数，此时页面上的元素已经被渲染完毕了
   async mounted () {
     // 3. 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'))
-    const { data:res } = await this.$http.get('reports/type/1')
+    const { data: res } = await this.$http.get('reports/type/1')
     if (res.meta.status !== 200) {
-        return this.$message.error('获取折线图数据失败!')
+      return this.$message.error('获取折线图数据失败!')
     }
 
     // 4. 准备数据和配置项
-    const result = _.merge(res.data,this.options)
+    const result = _.merge(res.data, this.options)
 
     // 5. 展示数据
-     myChart.setOption(result)
+    myChart.setOption(result)
   },
   // 组件方法
   methods: {}
 }
-</script> 
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->

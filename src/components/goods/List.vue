@@ -69,16 +69,16 @@ export default {
   // 组件状态值
   data () {
     return {
-        // 查询参数对象
-        queryInfo:{
-            query:'',
-            pagenum:1,
-            pagesize:10
-        },
-        // 商品列表
-        goodslist:[],
-        // 总数据条数
-        total:0
+      // 查询参数对象
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 10
+      },
+      // 商品列表
+      goodslist: [],
+      // 总数据条数
+      total: 0
     }
   },
   // 计算属性
@@ -86,51 +86,51 @@ export default {
   // 侦听器
   watch: {},
   created () {
-      this.getGoodsList()
+    this.getGoodsList()
   },
   // 组件方法
   methods: {
     //   根据分页获取对应的商品列表
-     async getGoodsList () {
-          const { data:res } = await this.$http.get('goods',{ params: this.queryInfo})
-          if (res.meta.status !== 200) {
-              return this.$message.error('获取商品列表失败!')
-          }
-          this.$message.success('获取商品列表成功!')
-        //   console.log(res.data)
-          this.goodslist = res.data.goods
-          this.total = res.data.total
-      },
-      handleSizeChange(newSize){
-          this.queryInfo.pagesize = newSize
-          this.getGoodsList()
-      },
-      handleCurrentChange(newPage){
-          this.queryInfo.pagenum = newPage
-          this.getGoodsList()
-      },
-      async removeById(id){
-           const confirmResult = await this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).catch(error => error)
-        if (confirmResult !== 'confirm') {
-            return this.$message.info('已取消删除')
-        }
-        const { data:res } = await this.$http.delete(`goods/${id}`)
-        if (res.meta.status !== 200) {
-            this.$message.error('删除失败!')
-        }
-        this.$message.success('删除成功!')
-        this.getGoodsList()
-      },
-      goAddpage () {
-          this.$router.push('/goods/add')
+    async getGoodsList () {
+      const { data: res } = await this.$http.get('goods', { params: this.queryInfo })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取商品列表失败!')
       }
+      this.$message.success('获取商品列表成功!')
+      //   console.log(res.data)
+      this.goodslist = res.data.goods
+      this.total = res.data.total
+    },
+    handleSizeChange (newSize) {
+      this.queryInfo.pagesize = newSize
+      this.getGoodsList()
+    },
+    handleCurrentChange (newPage) {
+      this.queryInfo.pagenum = newPage
+      this.getGoodsList()
+    },
+    async removeById (id) {
+      const confirmResult = await this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch(error => error)
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
+      const { data: res } = await this.$http.delete(`goods/${id}`)
+      if (res.meta.status !== 200) {
+        this.$message.error('删除失败!')
+      }
+      this.$message.success('删除成功!')
+      this.getGoodsList()
+    },
+    goAddpage () {
+      this.$router.push('/goods/add')
+    }
   }
 }
-</script> 
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->

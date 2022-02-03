@@ -6,55 +6,14 @@
  * @FilePath: /vue_shop/src/plugins/element.js
  */
 import Vue from 'vue'
-import { Button } from 'element-ui'
-/* 按需导入需要的组件 */
-import { Form, FormItem } from 'element-ui'
-import { Input } from 'element-ui'
-// 导入弹框提示组件
-import { Message } from 'element-ui'
-import { Container } from 'element-ui'
-import { Header } from 'element-ui'
-import { Aside } from 'element-ui'
-import { Main } from 'element-ui'
-import { Menu } from 'element-ui'
-import { Submenu } from 'element-ui'
-import { MenuItem } from 'element-ui'
-import { Breadcrumb } from 'element-ui'
-import { BreadcrumbItem } from 'element-ui'
-import { Card } from 'element-ui'
-import { Row } from 'element-ui'
-import { Col } from 'element-ui'
-import { Table } from 'element-ui'
-import { TableColumn } from 'element-ui'
-import { Switch } from 'element-ui'
-import { Tooltip } from 'element-ui'
-import { Pagination } from 'element-ui'
-import { Dialog } from 'element-ui'
-import { MessageBox } from 'element-ui'
-import { Tag } from 'element-ui'
-import { Tree } from 'element-ui'
-import { Select } from 'element-ui'
-import { Option } from 'element-ui'
-import { Cascader } from 'element-ui'
-import { Alert } from 'element-ui'
-import { Tabs } from 'element-ui'
-import { TabPane } from 'element-ui'
-import { Steps } from 'element-ui'
-import { Step } from 'element-ui'
-import { Checkbox } from 'element-ui'
-import { CheckboxGroup } from 'element-ui'
-import { Upload } from 'element-ui'
-import { Timeline } from 'element-ui'
-import { TimelineItem } from 'element-ui'
-
-
+import { Button, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Steps, Step, Checkbox, CheckboxGroup, Upload, Form, FormItem, Message } from 'element-ui'
 
 /* 注册为全局可用的组件 */
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
-    // 挂载到Vue的原型对象上，每个组件可以通过this直接访问 $message
+// 挂载到Vue的原型对象上，每个组件可以通过this直接访问 $message
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(Container)
@@ -88,5 +47,3 @@ Vue.use(Step)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
 Vue.use(Upload)
-Vue.use(Timeline)
-Vue.use(TimelineItem)

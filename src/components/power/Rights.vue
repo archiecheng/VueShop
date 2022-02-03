@@ -42,8 +42,8 @@ export default {
   // 组件状态值
   data () {
     return {
-        // 所有的权限列表
-        rightsList:[]
+      // 所有的权限列表
+      rightsList: []
     }
   },
   // 计算属性
@@ -52,22 +52,22 @@ export default {
   watch: {},
   created () {
     //   获取所有权限
-      this.getRightsList()
+    this.getRightsList()
   },
   // 组件方法
   methods: {
-      async getRightsList () {
-          const { data:res } = await this.$http.get(`rights/list`)
-          if (res.meta.status !== 200) {
-              return this.$message.error('获取用户权限失败!')
-          } else {
-              this.rightsList = res.data
-              console.log(this.rightsList)
-          }
+    async getRightsList () {
+      const { data: res } = await this.$http.get('rights/list')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取用户权限失败!')
+      } else {
+        this.rightsList = res.data
+        console.log(this.rightsList)
       }
+    }
   }
 }
-</script> 
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->

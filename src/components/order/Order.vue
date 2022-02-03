@@ -111,74 +111,74 @@ export default {
   // 组件状态值
   data () {
     return {
-        queryInfo:{
-            query:'',
-            pagenum:1,
-            pagesize:10
-        },
-        total:0,
-        orderlist:[],
-        addressVisible:false,
-        addressForm:{
-            address1:[],
-            address2:''
-        },
-        addressFormRules: {
-            address1:[
-                { required:true,message:'请选择省市区县',trigger:'blur' }
-            ],
-            address2:[
-                { required:true,message:'请填写详细地址',trigger:'blur' }
-            ]
-        },
-        cityData,
-        progressVisible:false,
-        progressInfo:[]
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 10
+      },
+      total: 0,
+      orderlist: [],
+      addressVisible: false,
+      addressForm: {
+        address1: [],
+        address2: ''
+      },
+      addressFormRules: {
+        address1: [
+          { required: true, message: '请选择省市区县', trigger: 'blur' }
+        ],
+        address2: [
+          { required: true, message: '请填写详细地址', trigger: 'blur' }
+        ]
+      },
+      cityData,
+      progressVisible: false,
+      progressInfo: []
     }
   },
   // 计算属性
   computed: {},
   // 侦听器
   watch: {},
-  created (){
-      this.getOrderList()
+  created () {
+    this.getOrderList()
   },
   // 组件方法
   methods: {
-      async getOrderList() {
-          const { data:res } = await this.$http.get('orders',{ params: this.queryInfo })
-          if (res.meta.status !== 200) {
-              return this.$message.error('获取订单列表失败！!')
-          }
-          this.total = res.data.total
-          this.orderlist = res.data.goods
-      },
-      handleSizeChange (newSize) {
-          this.queryInfo.pagesize = newSize
-          this.getOrderList()
-      },
-      handleCurrentChange (newPage) {
-          this.queryInfo.pagenum = newPage
-      },
-    //   展示修改地址的对话框
-      showBox () {
-          this.addressVisible = true
-      },
-      addressDialogClosed () {
-          this.$refs.addressFormRef.resetFields()
-      },
-      async showProgressBox () {
-        //   const { data:res } = await this.$http.get('/kuaidi/804909574412544580')
-        //   if (res.meta.status !== 200) {
-        //       return this.$message.error('获取物流进度失败!')
-        //   }
-        //   this.progressInfo = res.data
-        //   console.log(this.progressInfo)
-          this.progressVisible = true
+    async getOrderList () {
+      const { data: res } = await this.$http.get('orders', { params: this.queryInfo })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取订单列表失败！!')
       }
+      this.total = res.data.total
+      this.orderlist = res.data.goods
+    },
+    handleSizeChange (newSize) {
+      this.queryInfo.pagesize = newSize
+      this.getOrderList()
+    },
+    handleCurrentChange (newPage) {
+      this.queryInfo.pagenum = newPage
+    },
+    //   展示修改地址的对话框
+    showBox () {
+      this.addressVisible = true
+    },
+    addressDialogClosed () {
+      this.$refs.addressFormRef.resetFields()
+    },
+    async showProgressBox () {
+      //   const { data:res } = await this.$http.get('/kuaidi/804909574412544580')
+      //   if (res.meta.status !== 200) {
+      //       return this.$message.error('获取物流进度失败!')
+      //   }
+      //   this.progressInfo = res.data
+      //   console.log(this.progressInfo)
+      this.progressVisible = true
+    }
   }
 }
-</script> 
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->

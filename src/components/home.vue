@@ -72,56 +72,56 @@ export default {
   // 组件状态值
   data () {
     return {
-        // 左侧菜单数据
-        menulist: [],
-        iconObj: {
-            '125':'iconfont icon-user',
-            '103':'iconfont icon-tijikongjian',
-            '101':'iconfont icon-shangpin',
-            '102':'iconfont icon-danju',
-            '145':'iconfont icon-baobiao'
-        },
-        // 是否折叠
-        isCollapse:false,
-        // 被激活的链接地址
-        activePath:''
+      // 左侧菜单数据
+      menulist: [],
+      iconObj: {
+        125: 'iconfont icon-user',
+        103: 'iconfont icon-tijikongjian',
+        101: 'iconfont icon-shangpin',
+        102: 'iconfont icon-danju',
+        145: 'iconfont icon-baobiao'
+      },
+      // 是否折叠
+      isCollapse: false,
+      // 被激活的链接地址
+      activePath: ''
     }
   },
   // 计算属性
   computed: {},
   // 侦听器
   watch: {},
-  created() {
-      this.getMenuList()
-      this.activePath = window.sessionStorage.getItem('activePath')
+  created () {
+    this.getMenuList()
+    this.activePath = window.sessionStorage.getItem('activePath')
   },
   // 组件方法
   methods: {
-      logout () {
-          window.sessionStorage.clear()
-          this.$router.push('/login')
-      },
+    logout () {
+      window.sessionStorage.clear()
+      this.$router.push('/login')
+    },
     //   获取所有的菜单
-      async getMenuList() {
-          const { data:res } = await this.$http.get('menus')
-          if (res.meta.status !== 200) {
-              return this.$message.error(res.meta.msg)
-          } else {
-              this.menulist = res.data
-          }
-      },
+    async getMenuList () {
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) {
+        return this.$message.error(res.meta.msg)
+      } else {
+        this.menulist = res.data
+      }
+    },
     //   点击按钮，切换菜单的折叠与展开
-      toggleCollapse () {
-          this.isCollapse = !this.isCollapse
-      },
+    toggleCollapse () {
+      this.isCollapse = !this.isCollapse
+    },
     // 保存链接的激活状态
-    saveNavState(activePath) {
-        window.sessionStorage.setItem('activePath',activePath)
-        this.activePath = activePath
+    saveNavState (activePath) {
+      window.sessionStorage.setItem('activePath', activePath)
+      this.activePath = activePath
     }
   }
 }
-</script> 
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->
